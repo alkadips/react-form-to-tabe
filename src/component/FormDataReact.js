@@ -1,206 +1,208 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
 import "./FormDataReact.css";
-import UserTable from "./UserTable";
 export default function FormDataReact(props) {
   const [name, setName] = useState("");
-  const [selectedCity, setSelectedCity] = useState([]);
-  const [dob, setDob] = useState("");
   const [mobile, setMobile] = useState("");
-  const [occupation, setOccupation] = useState("");
-  const [religen, setReligen] = useState([]);
-  const [pincode, setPincode] = useState("");
-  const [country, setCountry] = useState("");
-  const [maritals, setMarital] = useState([]);
-  const [blodg, setBlodG] = useState("");
-  const [govid, setGoveId] = useState("");
-  const [govidType, setGoveIdType] = useState("");
   const [email, setEmail] = useState("");
-  const [nationality, setNationality] = useState("");
-  const [guardianDetails, setGuardian] = useState("");
   const changeName = (event) => {
     setName(event.target.value);
-  };
-  const handleChangeCity = (event) => {
-    setSelectedCity(event.target.value);
   };
   const handleChangeMobile = (event) => {
     setMobile(event.target.value);
   };
-  const handleChangeDob = (event) => {
-    setDob(event.target.value);
-  };
-  const handleChangeGovId = (event) => {
-    setGoveId(event.target.value);
-  };
-  const handleChangeGovIdType = (event) => {
-    setGoveIdType(event.target.value);
-  };
-  const handleChangeoccupation = (event) => {
-    setOccupation(event.target.value);
-  };
-  const handleChangeReligen = (event) => {
-    setReligen(event.target.value);
-  };
-  const handleChanePincode = (event) => {
-    setPincode(event.target.value);
-  };
- 
-  const handleChangeCountry = (event) => {
-    setCountry(event.target.value);
-  };
-  const handleChangeMarital = (event) => {
-    setMarital(event.target.value);
-  };
-  const handleChaneBlodG = (event) => {
-    setBlodG(event.target.value);
-  };
   const handleChangeEmail = (event) => {
     setEmail(event.target.value);
-  };
-  const handleChangeNationalty = (event) => {
-    setNationality(event.target.value);
   };
   const transferValue = (event) => {
     event.preventDefault();
     const val = {
       name,
       mobile,
-      dob,
-      govid,
-      govidType,
       email,
-      selectedCity,
-      country,
-      pincode,
-      occupation,
-      religen,
-      maritals,
-      nationality,
-      guardianDetails,
     };
     props?.func(val);
     clearState();
   };
-
   const clearState = () => {
     setName("");
-    setSelectedCity("");
-    setReligen("");
-
+    setMobile("");
+    setEmail("");
   };
-
   console.log("props", props);
   return (
     <div className="App">
       <div>
-        <form className="form-style">
-          <label>Name</label>
-          <input className="input-style" type="text" value={name} onChange={changeName} />
-          <label>City</label>
-          <select className="input-type" value={selectedCity} onChange={handleChangeCity}>
-            <option defuavalue="pune"></option>
-            <option defuavalue="pune">Pune</option>
-            <option value="mumbai">Mumbai</option>
-            <option value="lonawala">Lonawala</option>
-          </select>
-          <label>Mobile</label>
-          <input className="input-style" type="text" value={mobile} onChange={handleChangeMobile} />
-          <div className="row mt-5">
-            <div className="col-md-6">
-              <label>Date of birth: </label>
-
-              <input className="input-style"
-                value={dob}
-                type="date"
-                placeholder="Enter Date Of Birth"
-                onChange={handleChangeDob}
+        <div
+          id="carouselExampleDark"
+          class="carousel carousel-dark slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleDark"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img
+                src="/flower.jpg"
+                className="w-100"
+                style={{ height: "700px" }}
+                alt="..."
               />
-              <div className="mt-5">
-                <label htmlFor="">Country: </label>
-                <input className="input-style"
-                  value={country}
-                  onChange={handleChangeCountry}
-                  type="text"
-                  placeholder="Enter Country"
-                />
-              </div>
-              <div className="mt-5">
-                <label htmlFor="">Religion: </label>
-
-                <select className="input-type" value={religen} onChange={handleChangeReligen}>
-                <option defuavalue="hindu"></option>
-
-                  <option defuavalue="pune">Hindu</option>
-                  <option value="muslim">Muslim</option>
-                  <option value="shikh">Shikh</option>
-                </select>
-              </div>
-              <div className="mt-5">
-                <label htmlFor="">Nationality: </label>
-                <input className="input-style"
-                  value={nationality}
-                  type="text"
-                  onChange={handleChangeNationalty}
-                  placeholder="Enter Nationality"
-                />
-              </div>
-              <div className="mt-5">
-                <label htmlFor="">Email: </label>
-                <input className="input-style"
-                  value={email}
-                  type="text"
-                  onChange={handleChangeEmail}
-                  placeholder="Enter Nationality"
-                />
+              <div class="carousel-caption d-none d-md-block">
+                <form style={{padding:"20px",margin:'0 auto',width:"80%",background:"white"}}>
+                  <div className="mt-5 mb-5">Personel details</div>
+                  <div>
+                    <label>Email :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={email}
+                      onChange={handleChangeEmail}
+                      placeholder="Enter Email"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+                    <label>Phone :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={mobile}
+                      onChange={handleChangeMobile}
+                      placeholder="Enter Phone"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+                    <label>Name :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={name}
+                      onChange={changeName}
+                      placeholder="Enter name"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+          <button className="btn btn-primary" onClick={transferValue}> Submit</button>
+          </div>
+                  
+                </form>
               </div>
             </div>
-            <div className="col-md-6">
-              
-                <label htmlFor="">Govt issued id: </label>
-                <select className="input-type" value={govidType} onChange={handleChangeGovIdType}>
-                <option defuavalue="Aadhar"></option>
-
-                  <option value="Aadhar">Aadhar</option>
-                  <option value="pan">Pan</option>
-                  <option value="otting">Otting</option>
-                </select>
-                <input className="input-style"
-                  value={govid}
-                  onChange={handleChangeGovId}
-                  type="text"
-                  placeholder="Enter govt Id"
-                />
-              
-              <label className="mt-5" htmlFor="">
-                Pincode:{" "}
-              </label>
-              <input className="input-style"
-                value={pincode}
-                onChange={handleChanePincode}
-                type="text"
-                placeholder="Enter Pincode"
+            <div class="carousel-item" data-bs-interval="2000">
+              <img
+                src="/cloud.jpg"
+                className="w-100"
+                style={{ height: "700px" }}
+                alt="..."
               />
-              <div>
-              
-                <div className="mt-5">
-                  <label className="mt-5" htmlFor="">
-                    Occupation:{" "}
-                  </label>
-
-                  <input className="input-style"
-                    value={occupation}
-                    onChange={handleChangeoccupation}
-                    type="text"
-                    placeholder="Enter occupation"
-                  />
-                </div>
+              <div class="carousel-caption d-none d-md-block">
+              <form style={{padding:"20px",margin:'0 auto',width:"80%",background:"white"}}>
+                  <div className="mt-5 mb-5">Personel details</div>
+                  <div>
+                    <label>Email :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={email}
+                      onChange={handleChangeEmail}
+                      placeholder="Enter Email"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+                    <label>Phone :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={mobile}
+                      onChange={handleChangeMobile}
+                      placeholder="Enter Phone"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+                    <label>Name :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={name}
+                      onChange={changeName}
+                      placeholder="Enter name"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+          <button className="btn btn-primary" onClick={transferValue}> Submit</button>
+          </div>
+                  
+                </form>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="sun.jpg"
+                className="w-100"
+                style={{ height: "700px" }}
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+              <form style={{padding:"20px",margin:'0 auto',width:"80%",background:"white"}}>
+                  <div className="mt-5 mb-5">Personel details</div>
+                  <div>
+                    <label>Email :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={email}
+                      onChange={handleChangeEmail}
+                      placeholder="Enter Email"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+                    <label>Phone :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={mobile}
+                      onChange={handleChangeMobile}
+                      placeholder="Enter Phone"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+                    <label>Name :</label>
+                    <input style={{padding:'10px',borderRadius:"10px",width:"60%"}}
+                      value={name}
+                      onChange={changeName}
+                      placeholder="Enter name"
+                    ></input>
+                    </div>
+                    <div className="mt-3">
+          <button className="btn btn-primary" onClick={transferValue}> Submit</button>
+          </div>
+                  
+                </form>
               </div>
             </div>
           </div>
-
-          <button className="btn btn-primary" onClick={transferValue}> Submit</button>
-        </form>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   );
