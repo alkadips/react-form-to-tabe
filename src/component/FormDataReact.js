@@ -94,23 +94,23 @@ export default function FormDataReact(props) {
   return (
     <div className="App">
       <div>
-        <form>
+        <form className="form-style">
           <label>Name</label>
-          <input type="text" value={name} onChange={changeName} />
+          <input className="input-style" type="text" value={name} onChange={changeName} />
           <label>City</label>
-          <select value={selectedCity} onChange={handleChangeCity}>
+          <select className="input-type" value={selectedCity} onChange={handleChangeCity}>
             <option defuavalue="pune"></option>
             <option defuavalue="pune">Pune</option>
             <option value="mumbai">Mumbai</option>
             <option value="lonawala">Lonawala</option>
           </select>
           <label>Mobile</label>
-          <input type="text" value={mobile} onChange={handleChangeMobile} />
+          <input className="input-style" type="text" value={mobile} onChange={handleChangeMobile} />
           <div className="row mt-5">
             <div className="col-md-6">
               <label>Date of birth: </label>
 
-              <input
+              <input className="input-style"
                 value={dob}
                 type="date"
                 placeholder="Enter Date Of Birth"
@@ -118,7 +118,7 @@ export default function FormDataReact(props) {
               />
               <div className="mt-5">
                 <label htmlFor="">Country: </label>
-                <input
+                <input className="input-style"
                   value={country}
                   onChange={handleChangeCountry}
                   type="text"
@@ -128,7 +128,7 @@ export default function FormDataReact(props) {
               <div className="mt-5">
                 <label htmlFor="">Religion: </label>
 
-                <select value={religen} onChange={handleChangeReligen}>
+                <select className="input-type" value={religen} onChange={handleChangeReligen}>
                 <option defuavalue="hindu"></option>
 
                   <option defuavalue="pune">Hindu</option>
@@ -138,7 +138,7 @@ export default function FormDataReact(props) {
               </div>
               <div className="mt-5">
                 <label htmlFor="">Nationality: </label>
-                <input
+                <input className="input-style"
                   value={nationality}
                   type="text"
                   onChange={handleChangeNationalty}
@@ -147,7 +147,7 @@ export default function FormDataReact(props) {
               </div>
               <div className="mt-5">
                 <label htmlFor="">Email: </label>
-                <input
+                <input className="input-style"
                   value={email}
                   type="text"
                   onChange={handleChangeEmail}
@@ -156,51 +156,39 @@ export default function FormDataReact(props) {
               </div>
             </div>
             <div className="col-md-6">
-              <div>
+              
                 <label htmlFor="">Govt issued id: </label>
-              </div>
-              <div>
-                <select value={govidType} onChange={handleChangeGovIdType}>
+                <select className="input-type" value={govidType} onChange={handleChangeGovIdType}>
                 <option defuavalue="Aadhar"></option>
 
                   <option value="Aadhar">Aadhar</option>
                   <option value="pan">Pan</option>
                   <option value="otting">Otting</option>
                 </select>
-                <input
+                <input className="input-style"
                   value={govid}
                   onChange={handleChangeGovId}
                   type="text"
                   placeholder="Enter govt Id"
                 />
-              </div>
+              
               <label className="mt-5" htmlFor="">
                 Pincode:{" "}
               </label>
-              <input
+              <input className="input-style"
                 value={pincode}
                 onChange={handleChanePincode}
                 type="text"
                 placeholder="Enter Pincode"
               />
               <div>
-                {" "}
-                {/* <label className="mt-5" htmlFor="">
-                  Marital status:{" "}
-                </label>
-                <select value={maritals} onChange={handleChangeMarital}>
-                <option defuavalue="married"></option>
-
-                  <option value="married">Married</option>
-                  <option value="unmarried">Unmarried</option>
-                  <option value="other">Other</option>
-                </select> */}
+              
                 <div className="mt-5">
                   <label className="mt-5" htmlFor="">
                     Occupation:{" "}
                   </label>
 
-                  <input
+                  <input className="input-style"
                     value={occupation}
                     onChange={handleChangeoccupation}
                     type="text"
@@ -211,7 +199,7 @@ export default function FormDataReact(props) {
             </div>
           </div>
 
-          <button onClick={transferValue}> Submit</button>
+          <button className="btn btn-primary" onClick={transferValue}> Submit</button>
         </form>
       </div>
     </div>
