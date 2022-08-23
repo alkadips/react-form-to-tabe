@@ -1,0 +1,23 @@
+.form-style{
+    border: 1px solid;
+    padding: 20px;
+    width: 80%;
+
+    margin: 0 auto;
+}
+.input-style{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+.input-type{
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 173px;
+}
+.input-style-gov-id{
+    padding: 10px;
+    border-radius: 10px;
+    width: 240%;
+}
